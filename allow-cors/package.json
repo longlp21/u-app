@@ -1,0 +1,10 @@
+{
+  "scripts": {
+    "lib": "https://www.npmjs.com/package/local-cors-proxy   => npm run proxy ",
+    "proxy": "lcp --proxyUrl http://localhost:3000/authentication/sign-in",
+    "try": "https://apphntest.stepup.edu.vn/learnext/issue-api-open/send-noti => http://localhost:8010/proxy//learnext/issue-api-open/send-noti"
+  },
+  "dependencies": {
+    "local-cors-proxy": "^1.1.0"
+  }
+}
