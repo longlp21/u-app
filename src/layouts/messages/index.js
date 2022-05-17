@@ -62,7 +62,7 @@ function Messages() {
               <MDBox p={2}>
                 <Grid container spacing={3}>
                   <Grid item xs={12} sm={6} lg={3}>
-                    <MDButton variant="gradient" color="info" onClick={openInfoSB} fullWidth>
+                    <MDButton color="info" onClick={openInfoSB} fullWidth>
                       info notification
                     </MDButton>
                     {renderInfoSB}

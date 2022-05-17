@@ -39,7 +39,6 @@ function DefaultInfoCard({ color, icon, title, description, value }) {
           height="4rem"
           shadow="md"
           borderRadius="lg"
-          variant="gradient"
         >
           <Icon fontSize="default">{icon}</Icon>
         </MDBox>

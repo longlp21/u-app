@@ -38,7 +38,6 @@ function TimelineList({ title, dark, children }) {
       <Card>
         <MDBox
           bgColor={dark ? "dark" : "white"}
-          variant="gradient"
           borderRadius="xl"
           sx={{ background: ({ palette: { background } }) => darkMode && background.card }}
         >

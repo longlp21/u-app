@@ -97,7 +97,7 @@ export default function data() {
         ),
         completion: (
           <MDBox width="8rem" textAlign="left">
-            <MDProgress value={60} color="info" variant="gradient" label={false} />
+            <MDProgress value={60} color="info" label={false} />
           </MDBox>
         ),
       },
@@ -139,7 +139,7 @@ export default function data() {
         ),
         completion: (
           <MDBox width="8rem" textAlign="left">
-            <MDProgress value={100} color="success" variant="gradient" label={false} />
+            <MDProgress value={100} color="success" label={false} />
           </MDBox>
         ),
       },

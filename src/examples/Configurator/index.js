@@ -223,7 +223,6 @@ function Configurator() {
           >
             <MDButton
               color="dark"
-              variant="gradient"
               onClick={handleDarkSidenav}
               disabled={disabled}
               fullWidth
@@ -238,7 +237,6 @@ function Configurator() {
             <MDBox sx={{ mx: 1, width: "8rem", minWidth: "8rem" }}>
               <MDButton
                 color="dark"
-                variant="gradient"
                 onClick={handleTransparentSidenav}
                 disabled={disabled}
                 fullWidth
@@ -253,7 +251,6 @@ function Configurator() {
             </MDBox>
             <MDButton
               color="dark"
-              variant="gradient"
               onClick={handleWhiteSidenav}
               disabled={disabled}
               fullWidth

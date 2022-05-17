@@ -139,7 +139,7 @@ export default function data() {
         function: <Job title="Manager" description="Executive" />,
         status: (
           <MDBox ml={-1}>
-            <MDBadge badgeContent="offline" color="dark" variant="gradient" size="sm" />
+            <MDBadge badgeContent="offline" color="dark" size="sm" />
           </MDBox>
         ),
         employed: (
@@ -158,7 +158,7 @@ export default function data() {
         function: <Job title="Programator" description="Developer" />,
         status: (
           <MDBox ml={-1}>
-            <MDBadge badgeContent="offline" color="dark" variant="gradient" size="sm" />
+            <MDBadge badgeContent="offline" color="dark" size="sm" />
           </MDBox>
         ),
         employed: (

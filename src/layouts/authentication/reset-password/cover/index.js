@@ -33,7 +33,6 @@ function Cover() {
     <CoverLayout coverHeight="50vh" image={bgImage}>
       <Card>
         <MDBox
-          variant="gradient"
           bgColor="info"
           borderRadius="lg"
           coloredShadow="success"

@@ -37,7 +37,6 @@ const MDBadge = forwardRef(
 // Setting default values for the props of MDBadge
 MDBadge.defaultProps = {
   color: "info",
-  variant: "gradient",
   size: "sm",
   circular: false,
   indicator: false,

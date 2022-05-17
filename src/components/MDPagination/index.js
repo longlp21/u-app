@@ -66,7 +66,6 @@ const MDPagination = forwardRef(
 // Setting default values for the props of MDPagination
 MDPagination.defaultProps = {
   item: false,
-  variant: "gradient",
   color: "info",
   size: "medium",
   active: false,

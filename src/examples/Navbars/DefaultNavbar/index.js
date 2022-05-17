@@ -110,7 +110,7 @@ function DefaultNavbar({ transparent, light, action }) {
           pl={{ xs: 0, lg: 1 }}
         >
           <MDTypography variant="button" fontWeight="bold" color={light ? "white" : "dark"}>
-            Material Dashboard 2
+            Dashboard
           </MDTypography>
         </MDBox>
         <MDBox color="inherit" display={{ xs: "none", lg: "flex" }} m={0} p={0}>
@@ -135,7 +135,6 @@ function DefaultNavbar({ transparent, light, action }) {
               <MDButton
                 component={Link}
                 to={action.route}
-                variant="gradient"
                 color={action.color ? action.color : "info"}
                 size="small"
               >
@@ -149,7 +148,6 @@ function DefaultNavbar({ transparent, light, action }) {
                 href={action.route}
                 target="_blank"
                 rel="noreferrer"
-                variant="gradient"
                 color={action.color ? action.color : "info"}
                 size="small"
                 sx={{ mt: -0.3 }}

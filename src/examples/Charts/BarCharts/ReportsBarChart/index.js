@@ -42,7 +42,6 @@ function ReportsBarChart({ color, title, description, date, chart }) {
         {useMemo(
           () => (
             <MDBox
-              variant="gradient"
               bgColor={color}
               borderRadius="lg"
               coloredShadow={color}
