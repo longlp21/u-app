@@ -29,9 +29,9 @@ function Login() {
                 autoFocus
                 id="username"
                 type="text"
-                value={username}
+                // value={username}
                 placeholder="Username"
-                onChange={(e) => setUsername(e.target.value)}
+                onInput={(e) => setUsername(e.target.value)}
                 fullWidth
               />
             </MDBox>
