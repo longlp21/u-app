@@ -1,0 +1,30 @@
+{
+    "_id": "abec4ed5-8f9e-47d8-89b3-73fd141111",
+    "name": "post",
+    "description": "post",
+    "code": "post",
+    "collectionName": "post",
+    "accessPublic": "false",
+    "isActive": true,
+    "model": {
+        "content": {
+            "type": "string",
+            "required": true
+        },
+        "createdBy": {
+            "type": "string"
+        },
+        "createdAt": {
+            "type": "Number"
+        },
+        "status": {
+            "type": "Number"
+        }
+    },
+    "publicOption": {
+        "fieldSearch": [
+        ],
+        "projection": [
+        ]
+    }
+}
