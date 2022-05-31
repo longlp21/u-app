@@ -11,7 +11,7 @@ import MDButton from "components/MDButton";
 import BasicLayout from "layouts/authentication/components/BasicLayout";
 // React Hooks
 import { useState } from "react";
-import HandleSubmit from "./HandleSubmit";
+import handleSubmit from "./HandleSubmit";
 
 function Login() {
   const [username, setUsername] = useState("");
@@ -23,15 +23,13 @@ function Login() {
           Sign in
         </MDTypography>
         <MDBox pt={4} pb={3} px={3}>
-          <MDBox component="form" role="form">
+          <MDBox component="form" role="form" onSubmit={handleSubmit}>
             <MDBox mb={1}>
               <MDInput
                 autoFocus
                 id="username"
                 type="text"
-                // value={username}
                 placeholder="Username"
-                onInput={(e) => setUsername(e.target.value)}
                 fullWidth
               />
             </MDBox>
@@ -40,18 +38,13 @@ function Login() {
                 id="password"
                 type="password"
                 placeholder="Password"
-                onChange={(e) => setPassword(e.target.value)}
                 fullWidth
               />
             </MDBox>
             <MDBox mt={2} mb={1}>
               <MDButton
-                color="info"
-                onClick={HandleSubmit(username, password)}
-                onChange={(e) => setUsername(e.target.value)}
-                fullWidth
-              >
-                sign in
+                color="info" type="submit" fullWidth>
+                Sign in
               </MDButton>
             </MDBox>
             <MDBox mt={1} mb={-1} textAlign="center">

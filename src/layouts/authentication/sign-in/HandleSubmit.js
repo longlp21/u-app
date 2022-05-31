@@ -1,8 +1,12 @@
+// https://contactmentor.com/login-form-react-js-code/
+
 import axios from "axios";
 
-function HandleSubmit(username, password) {
-  const data = JSON.stringify({ username, password });
-
+function handleSubmit(event) {
+  //Prevent page reload
+  event.preventDefault();
+  console.log(event)
+  const data = JSON.stringify({ username: event.target[0].value , password: event.target[2].value });
   console.log(data);
   const config = {
     method: "post",
@@ -18,7 +22,8 @@ function HandleSubmit(username, password) {
     })
     .catch((error) => {
       console.log(error);
-    });
+    }); 
+
 }
 
-export default HandleSubmit;
+export default handleSubmit;
