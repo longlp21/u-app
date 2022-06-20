@@ -16,8 +16,10 @@
     "spaced-comment": "off",
     "no-unused-vars": "off",
     "prettier/prettier": 0,
+    "react/forbid-prop-types": "off",
     "default-param-last": "off",
     "react/react-in-jsx-scope": "off",
+    "no-console": "off",
     "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }],
     "react/jsx-props-no-spreading": [
       1,

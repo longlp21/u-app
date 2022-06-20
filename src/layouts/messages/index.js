@@ -40,7 +40,7 @@ function Messages() {
   const renderInfoSB = (
     <MDSnackbar
       icon="notifications"
-      title="Material Dashboard"
+      title="Notification"
       content="Hello, world! This is a notification message"
       dateTime="11 mins ago"
       open={infoSB}
@@ -61,12 +61,7 @@ function Messages() {
               </MDBox>
               <MDBox p={2}>
                 <Grid container spacing={3}>
-                  <Grid item xs={12} sm={6} lg={3}>
-                    <MDButton color="info" onClick={openInfoSB} fullWidth>
-                      info notification
-                    </MDButton>
-                    {renderInfoSB}
-                  </Grid>
+                  <Grid item xs={12} sm={6} lg={3} />
                 </Grid>
               </MDBox>
             </Card>

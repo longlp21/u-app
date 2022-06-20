@@ -21,9 +21,8 @@ function handleSubmit(event) {
       console.log(response.data);
     })
     .catch((error) => {
-      console.log(error);
-    }); 
-
+      console.log(error); 
+})
 }
 
 export default handleSubmit;
