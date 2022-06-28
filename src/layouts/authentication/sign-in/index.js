@@ -1,6 +1,6 @@
 import { useRef, useEffect, useState } from "react";
 // react-router-dom components
-import { Link } from "react-router-dom";
+import { Link, Navigate } from "react-router-dom";
 // @mui material components
 import Card from "@mui/material/Card";
 // Material Dashboard 2 React components
@@ -10,7 +10,6 @@ import MDInput from "components/MDInput";
 import MDButton from "components/MDButton";
 import BasicLayout from "layouts/authentication/components/BasicLayout";
 import axios from "axios";
-import MDAlert from "components/MDAlert";
 
 function Login() {
   const userRef = useRef();
@@ -66,12 +65,11 @@ function Login() {
         errRef.current.focus();
         console.log(error); 
   })
-
   }
   return (
     <>
       {success ? (
-        <Link to="/dashboard" />
+        <Navigate to='/Dashboard' />
       ) : (
         <BasicLayout>
           <Card>

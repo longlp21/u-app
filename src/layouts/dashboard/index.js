@@ -4,8 +4,8 @@ import Card from "@mui/material/Card";
 import MDBox from "components/MDBox";
 import DashboardLayout from "examples/LayoutContainers/DashboardLayout";
 import DashboardNavbar from "examples/Navbars/DashboardNavbar";
-import Form from "./Form";
 import Post from "./Post";
+import Feed from "./Feed";
 
 function Dashboard() {
   const [posts, setPosts] = useState([]);  
@@ -17,13 +17,13 @@ function Dashboard() {
           <Grid xs={9}>
             <MDBox>
               <Card>
-                <Form />
+                <Post />
               </Card>
             </MDBox>
             &nbsp;
             <Card>
               <MDBox m={1}>
-                <Post />
+                <Feed />
               </MDBox>
             </Card>
           </Grid>
