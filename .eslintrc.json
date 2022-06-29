@@ -13,6 +13,11 @@
   },
   "plugins": ["react", "prettier"],
   "rules": {
+    "react/button-has-type": [true, {
+      "button": false,
+      "submit": false,
+      "reset": false
+    }],
     "spaced-comment": "off",
     "no-unused-vars": "off",
     "prettier/prettier": 0,
