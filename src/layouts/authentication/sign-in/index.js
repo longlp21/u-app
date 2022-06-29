@@ -15,23 +15,26 @@ function Login() {
   const userRef = useRef();
   const errRef = useRef();
 
-  const [user, setUser] = useState('');
-  const [password, setPassword] = useState('');
-  const [errMsg, setErrMsg] = useState('');
+  const [user, setUser] = useState("");
+  const [password, setPassword] = useState("");
+  const [errMsg, setErrMsg] = useState("");
   const [success, setSuccess] = useState(false);
 
   useEffect(() => {
     userRef.current.focus();
-  },[])
+  }, []);
 
   useEffect(() => {
-    setErrMsg('');
-  },[user,password])
+    setErrMsg("");
+  }, [user, password]);
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    console.log(event)
-    const data = JSON.stringify({ username: event.target[0].value , password: event.target[2].value });
+    console.log(event);
+    const data = JSON.stringify({
+      username: event.target[0].value,
+      password: event.target[2].value,
+    });
     console.log(data);
     const config = {
       method: "post",
@@ -43,10 +46,10 @@ function Login() {
     };
     axios(config)
       .then((response) => {
-        console.log(response.data); 
+        console.log(response.data);
         console.log(user, password);
-        setUser('');
-        setPassword('');
+        setUser("");
+        setPassword("");
         setSuccess(true);
       })
       .catch((error) => {
@@ -55,42 +58,48 @@ function Login() {
         // }
         if (error.response?.status === 400) {
           setErrMsg("Missing Username or Password");
-        }
-        else if (error.response?.status === 401){
+        } else if (error.response?.status === 401) {
           setErrMsg("Unauthorized");
-        }
-        else {
-          setErrMsg('Login Failed');
+        } else {
+          setErrMsg("Login Failed");
         }
         errRef.current.focus();
-        console.log(error); 
-  })
-  }
+        console.log(error);
+      });
+  };
   return (
-    <>
+    <div>
       {success ? (
-        <Navigate to='/Dashboard' />
+        <Navigate to="/Dashboard" />
       ) : (
         <BasicLayout>
           <Card>
             <MDTypography variant="h4" fontWeight="medium" align="center" color="info" mt={3}>
               Sign in
             </MDTypography>
-            <p color="error" align="center" ref={errRef} className={errMsg ? "errmsg" : "offscreen"} aria-live="assertive">{errMsg}</p>
+            <p
+              color="error"
+              align="center"
+              ref={errRef}
+              className={errMsg ? "errmsg" : "offscreen"}
+              aria-live="assertive"
+            >
+              {errMsg}
+            </p>
             <MDBox pt={4} pb={3} px={3}>
               <MDBox component="form" role="form" onSubmit={handleSubmit}>
                 <MDBox mb={1}>
                   <MDInput
-                      value={user}
-                      autoFocus
-                      id="username"
-                      type="text"
-                      ref={userRef}
-                      onChange={(e) => setUser(e.target.value)}
-                      placeholder="Username"
-                      fullWidth
-                      required 
-                    />
+                    value={user}
+                    autoFocus
+                    id="username"
+                    type="text"
+                    ref={userRef}
+                    onChange={(e) => setUser(e.target.value)}
+                    placeholder="Username"
+                    fullWidth
+                    required
+                  />
                 </MDBox>
                 <MDBox mb={1}>
                   <MDInput
@@ -104,15 +113,14 @@ function Login() {
                   />
                 </MDBox>
                 <MDBox mt={2} mb={1}>
-                    <MDButton
-                      color="info" type="submit" fullWidth>
-                      Sign in
-                    </MDButton>
+                  <MDButton color="info" type="submit" fullWidth>
+                    Sign in
+                  </MDButton>
                 </MDBox>
                 <MDBox mt={1} mb={-1} textAlign="center">
-                <MDTypography variant="button" color="text">
+                  <MDTypography variant="button" color="text">
                     Don&apos;t have an account?{" "}
-                  <MDTypography
+                    <MDTypography
                       component={Link}
                       to="/authentication/sign-up"
                       variant="button"
@@ -120,15 +128,15 @@ function Login() {
                       fontWeight="medium"
                     >
                       Sign up
+                    </MDTypography>
                   </MDTypography>
-                </MDTypography>
                 </MDBox>
               </MDBox>
             </MDBox>
           </Card>
         </BasicLayout>
-  )}
-  </>
+      )}
+    </div>
   );
 }
 

@@ -1,11 +1,4 @@
-// import DashboardLayout from "examples/LayoutContainers/DashboardLayout";
-// import DashboardNavbar from "examples/Navbars/DashboardNavbar";
-import App from './components/App';
-
-function Messages (){
-    return (
-        <App />
-    )
-}
-
+const Messages = function Messages() {
+  return <div>abc</div>;
+};
 export default Messages;
