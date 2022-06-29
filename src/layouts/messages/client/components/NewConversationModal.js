@@ -1,38 +1,36 @@
-import React, { useState } from 'react'
-import { Modal, Form, Button } from 'react-bootstrap'
-import { useContacts } from '../contexts/ContactsProvider'
-import { useConversations } from '../contexts/ConversationsProvider'
+import React, { useState } from "react";
+import { Modal, Form, Button } from "react-bootstrap";
+import { useContacts } from "../contexts/ContactsProvider";
+import { useConversations } from "../contexts/ConversationsProvider";
 
 export default function NewConversationModal(closeModal) {
-  const [selectedContactIds, setSelectedContactIds] = useState([])
-  const { contacts } = useContacts()
-  const { createConversation } = useConversations()
+  const [selectedContactIds, setSelectedContactIds] = useState([]);
+  const { contacts } = useContacts();
+  const { createConversation } = useConversations();
 
   function handleSubmit(e) {
-    e.preventDefault()
+    e.preventDefault();
 
-    createConversation(selectedContactIds)
-    closeModal()
+    createConversation(selectedContactIds);
+    closeModal();
   }
 
   function handleCheckboxChange(contactId) {
-    setSelectedContactIds(prevSelectedContactIds => {
+    setSelectedContactIds((prevSelectedContactIds) => {
       if (prevSelectedContactIds.includes(contactId)) {
-        return prevSelectedContactIds.filter(prevId => 
-          contactId !== prevId
-        )
+        return prevSelectedContactIds.filter((prevId) => contactId !== prevId);
       }
-      
-      return [...prevSelectedContactIds, contactId]
-    })
+
+      return [...prevSelectedContactIds, contactId];
+    });
   }
 
   return (
     <>
       <Modal.Header closeButton>Create Conversation</Modal.Header>
       <Modal.Body>
-        <Form onSubmit={handleSubmit}>
-          {contacts.map(contact => (
+        <Form onSubmit={() => handleSubmit()}>
+          {contacts.map((contact) => (
             <Form.Group controlId={contact.id} key={contact.id}>
               <Form.Check
                 type="checkbox"
@@ -46,5 +44,5 @@ export default function NewConversationModal(closeModal) {
         </Form>
       </Modal.Body>
     </>
-  )
+  );
 }
