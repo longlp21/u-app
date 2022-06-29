@@ -1,4 +1,4 @@
 const Messages = function Messages() {
-  return <div>Messages</div>;
+  return <div>Test</div>;
 };
 export default Messages;
