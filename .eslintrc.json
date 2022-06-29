@@ -27,7 +27,8 @@
         "custom": "ignore"
       }
     ],
-    "react/jsx-curly-spacing": [2, "never"]
+    "react/jsx-curly-spacing": [2, "never"] 
+    // "no-shadow": ["error", { "builtinGlobals": false, "hoist": "functions", "allow": [], "ignoreOnInitialization": false }]
   },
   "settings": { "import/resolver": { "node": { "paths": ["src"] } } }
 }
