@@ -9,13 +9,15 @@ body {
     background: rgba(0, 0, 0, 0.15);
     padding: 0.25rem;
     position: fixed;
-    bottom: 0;
-    left: 0;
-    right: 0;
+    bottom: 15px;
+    /* left: 0; */
+    right: 210px;
     display: flex;
     height: 3rem;
     box-sizing: border-box;
     backdrop-filter: blur(10px);
+    width: 1000px;
+    border-radius: 10px;
   }
   .input1 {
     cursor: pointer;
@@ -24,6 +26,7 @@ body {
     flex-grow: 1;
     border-radius: 2rem;
     margin: 0.25rem;
+    
   }
   .input1:focus {
     outline: none;
@@ -36,16 +39,39 @@ body {
     border-radius: 3px;
     outline: none;
     color: #fff;
+    cursor: pointer;
   }
 
   .messages1 {
     list-style-type: none;
-    margin: 0;
-    padding: 0;
+    background-color: rgb(248, 239, 239);
+    width: 990px;
+    height: 630px;
+    /* position: absolute; */
+    top: 3%;
+    left: 22%;
+    margin: 0 auto;
+    border-radius: 10px;
   }
   .messages1 > li {
     padding: 0.5rem 1rem;
   }
   .messages1 > li:nth-child(odd) {
     background: #efefef;
+  }
+  .room1 {
+    position: absolute;
+  }
+  .boardChat {
+    background-color: rgb(248, 239, 239);
+    width: 990px;
+    height: 630px;
+    position: absolute;
+    top: 3%;
+    left: 22%;
+    margin: 0 auto;
+    border-radius: 10px;
+  }
+  .title1 {
+    text-align: center;
   }
