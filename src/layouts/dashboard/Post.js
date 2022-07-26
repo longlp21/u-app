@@ -1,14 +1,16 @@
-import { useState } from "react";
+import "./Post.css"
+import { useRef, useState } from "react";
 import axios from "axios";
 import MDBox from "components/MDBox";
-import { TextField, Divider } from "@mui/material";
+import { TextField, Divider, InputLabel, SliderMarkLabel } from "@mui/material";
 import MDButton from "components/MDButton";
-import InsertPhotoIcon from '@mui/icons-material/InsertPhoto';
-import EmojiEmotionsIcon from '@mui/icons-material/EmojiEmotions';
-import GraphicEqIcon from '@mui/icons-material/GraphicEq';
+import PhotoIcon from '@mui/icons-material/AddPhotoAlternateOutlined';
+import Cancel from '@mui/icons-material/Cancel';
 
 function Post () {
     const [input, setInput] = useState('')
+    const [file, setFile] = useState(null);
+    const desc = useRef()
 
     const handleSubmit = (event) => {
         event.preventDefault();
@@ -41,7 +43,6 @@ function Post () {
             .catch( (error) => {
             console.log(error);
         });
-        
     }
     return (
         <MDBox mt={3} ml={3} mr={3} mb={1}>
@@ -51,21 +52,36 @@ function Post () {
                         placeholder="Write something..."
                         variant="standard"
                         fullWidth
+                        ref={desc}
                         outline="none"
                         InputProps={{
                             disableUnderline: true,
                             endAdornment: (
                                 <MDButton 
-                                color="info" onClick={handleSubmit}
+                                color="info" 
                                 >Post</MDButton>
                             ),
                         }}
                         />
+                        {file && (
+                                          <div className="shareImgContainer">
+                                            <img className="shareImg" src={URL.createObjectURL(file)} alt="" />
+                                            <Cancel className="" onClick={() => setFile(null)} />
+                                          </div>
+                                          )}
+
                         <Divider />
-                        <MDBox>
-                        <MDButton startIcon={<InsertPhotoIcon />} >Photos/ Videos</MDButton>
-                        <MDButton startIcon={<EmojiEmotionsIcon />} >Emotions</MDButton>
-                        </MDBox>
+                        <label htmlFor="file">
+                          <PhotoIcon className="shareIcon" />
+                          <input 
+                              style={{ display: "none" }}
+                              type="file"
+                              id="file"
+                              onChange={(e) => setFile(e.target.files[0])} 
+                            />
+                        </label>
+                         
+                        <MDBox />
                     </MDBox>
         )
     }
