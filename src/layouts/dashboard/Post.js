@@ -8,42 +8,39 @@ import PhotoIcon from '@mui/icons-material/AddPhotoAlternateOutlined';
 import Cancel from '@mui/icons-material/Cancel';
 
 function Post () {
-    const [input, setInput] = useState('')
-    const [file, setFile] = useState(null);
-    const desc = useRef()
+    const [input, setInput] = useState('');
+    const [file, setFile] = useState('');
+    const [body, setBody] = useState('');
 
     const handleSubmit = (event) => {
         event.preventDefault();
-
+        const posts = { body };
         const data = JSON.stringify({
-          "code": "post",
+          "code": "person",
           "params": {
-            "content": "quandv post",
-            "createdAt": 1653877440409,
-            "createdBy": "quuandev",
-            "age": 10,
-            "status": 1
+            "firstName": "long",
+            "lastName": "lp",
+            "age": 10
           }
         });
-        
-        const config = {
+
+        fetch('http://localhost:5000/json-schema-dynamic/private/create', {
           method: 'post',
-          url: 'http://localhost:5000/json-schema-dynamic/private/create',
           headers: { 
-            'Authorization': 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2Mjc0YWU0ZWVhYzA1MDI3YjRhNWY0ZmUiLCJpYXQiOjE2NTM4NzcxOTUsImV4cCI6MTY1Mzg3ODA5NX0.zIUEg6jtdiVcAEiJec5Uk7_sauyQvNrOsPSel8Gm9yM', 
-            'Content-Type': 'application/json'
+            'Authorization': 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MmZkOWU1ZDY3NzMyODJmZjQ5ZTJkYzgiLCJpYXQiOjE2NjMzMTExMzIsImV4cCI6MTY2MzMxMjAzMn0.RajXQOipMzSd68phpuVjn2pBeWBnOzojdKjAG7sYfcc', 
+            'Content-Type': 'application/json',
           },
-          data,
-        };
-        
-        axios(config)
-            .then( (response) => {
-                 console.log(JSON.stringify(response.data));
-            })
-            .catch( (error) => {
-            console.log(error);
+          body: JSON.stringify(data)
+        })
+        .then((response) => {
+          console.log(JSON.stringify(response.data));
+        })
+        .catch( (error) => {
+          console.log(error);
         });
-    }
+
+    }          
+    const desc = useRef()
     return (
         <MDBox mt={3} ml={3} mr={3} mb={1}>
                         <TextField
@@ -57,8 +54,7 @@ function Post () {
                         InputProps={{
                             disableUnderline: true,
                             endAdornment: (
-                                <MDButton 
-                                color="info" 
+                                <MDButton type="submit" onClick={handleSubmit}
                                 >Post</MDButton>
                             ),
                         }}
@@ -66,10 +62,9 @@ function Post () {
                         {file && (
                                           <div className="shareImgContainer">
                                             <img className="shareImg" src={URL.createObjectURL(file)} alt="" />
-                                            <Cancel className="" onClick={() => setFile(null)} />
+                                            <Cancel className="shareCancelImg" onClick={() => setFile(null)} />
                                           </div>
                                           )}
-
                         <Divider />
                         <label htmlFor="file">
                           <PhotoIcon className="shareIcon" />
@@ -80,7 +75,6 @@ function Post () {
                               onChange={(e) => setFile(e.target.files[0])} 
                             />
                         </label>
-                         
                         <MDBox />
                     </MDBox>
         )

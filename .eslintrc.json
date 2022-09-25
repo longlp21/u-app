@@ -13,11 +13,12 @@
   },
   "plugins": ["react", "prettier"],
   "rules": {
-    "react/button-has-type": [true, {
-      "button": false,
-      "submit": false,
-      "reset": false
-    }],
+    // "react/button-has-type": [{
+    //   "button": false,
+    //   "submit": false,
+    //   "reset": false
+    // }],
+    "camelcase": "off",
     "spaced-comment": "off",
     "no-unused-vars": "off",
     "prettier/prettier": 0,
@@ -32,8 +33,9 @@
         "custom": "ignore"
       }
     ],
-    "react/jsx-curly-spacing": [2, "never"] 
-    // "no-shadow": ["error", { "builtinGlobals": false, "hoist": "functions", "allow": [], "ignoreOnInitialization": false }]
+    "react/jsx-curly-spacing": [2, "never"],
+    "no-shadow": "off"
+    // "@typescript-eslint/no-shadow": ["error"]
   },
   "settings": { "import/resolver": { "node": { "paths": ["src"] } } }
 }

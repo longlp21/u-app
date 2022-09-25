@@ -5,25 +5,26 @@ import MDBox from "components/MDBox";
 import DashboardLayout from "examples/LayoutContainers/DashboardLayout";
 import DashboardNavbar from "examples/Navbars/DashboardNavbar";
 import Post from "./Post";
-// import Feed from "./Feed";
+import Feeds from "./Feeds";
+
 
 function Dashboard() {
-  const [posts, setPosts] = useState([]);
+
+  
   return (
     <DashboardLayout>
-      <DashboardNavbar />
+      {/* <DashboardNavbar /> */}
       <MDBox py={1.5}>
         <Grid>
-          <Grid xs={9}>
+          <Grid item xs={9}>
             <MDBox>
               <Card>
                 <Post />
               </Card>
             </MDBox>
             &nbsp;
-            <Card>
-              <MDBox m={1}>{/* <Feed /> */}</MDBox>
-            </Card>
+              <MDBox m={1}><Feeds /></MDBox>
+            &nbsp;
           </Grid>
         </Grid>
       </MDBox>

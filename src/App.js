@@ -1,5 +1,8 @@
 import { useState, useEffect } from "react";
 
+//cors 
+import cors from 'cors';
+
 // react-router components
 import { Routes, Route, Navigate, useLocation } from "react-router-dom";
 
@@ -39,7 +42,10 @@ import { useMaterialUIController, setMiniSidenav, setOpenConfigurator } from "co
 // import brandWhite from "assets/images/logo-ct.png";
 // import brandDark from "assets/images/logo-ct-dark.png";
 
+
 export default function App() {
+  // app.use(cors());
+
   const [controller, dispatch] = useMaterialUIController();
   const {
     miniSidenav,
@@ -182,3 +188,4 @@ export default function App() {
     </ThemeProvider>
   );
 }
+
